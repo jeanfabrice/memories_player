@@ -54,6 +54,8 @@ Ce boitier contient :
 * le Raspberry Pi Zero
 * la carte audio Raspiaudio
 
+Le [boitier](documentation_resources/boitier_principal.stl) - Le [couvercle](documentation_resources/boitier_principal_couvercle.stl)
+
 Boitier de télécommande filaire
 -------------------------------
 Il s'agit d'un boitier déporté permettant de contrôler le boitier principal, par exemple lorsque ce dernier est fixé à l'arrière d'un cadre photo et la télécommande filaire sur la tranche du cadre.
@@ -65,6 +67,8 @@ Ce boitier contient :
 * la led indicatrice d'état
 
 Le tout, implanté sur une plaque d'essai.
+
+Le [boitier](documentation_resources/boitier_secondaire.stl) - Le [couvercle](documentation_resources/boitier_secondaire_couvercle.stl)
 
 
 Crédits
