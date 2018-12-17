@@ -1,0 +1,1 @@
+memories_player ansible_host=192.168.10.158 ansible_user=pi ansible_ssh_pass=raspberry ansible_become=true

@@ -1,0 +1,13 @@
+[Unit]
+Description=Memories player service
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=0
+SuccessExitStatus=0
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/local/bin/memories_player.py
+
+[Install]
+WantedBy=multi-user.target

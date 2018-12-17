@@ -1,0 +1,67 @@
+- hosts: memories_player
+  gather_facts: false
+  tasks:
+    - name: install system packages
+      apt:
+        name: "{{item}}"
+        state: latest
+        update_cache: yes
+      with_items:
+        - python-pip
+        - nodejs
+        - mpg123
+
+    - name: install pip packages
+      pip:
+        name: "{{item}}"
+      with_items:
+        - RPi.GPIO
+
+    - name: copy memories_player.py
+      copy:
+        src: files/memories_player.py
+        dest: /usr/local/bin/memories_player.py
+        mode: 0755
+
+    - name: create /memories directory
+      file:
+        path: /memories
+        state: directory
+
+    - name: deploy memories_player systemd unit
+      copy:
+        src: files/memories_player.service
+        dest: /etc/systemd/system/memories_player.service
+
+    - name: enable memories_player systemd service
+      systemd:
+        daemon_reload: yes
+        name: memories_player.service
+        enabled: yes
+        state: started
+
+    - name: download pad.js.org
+      get_url:
+        url: http://pad.js.org
+        dest: /usr/local/bin/pad.js
+
+    - name: deploy padjs systemd unit
+      copy:
+        src: files/padjs.service
+        dest: /etc/systemd/system/padjs.service
+
+    - name: enable padjs systemd service
+      systemd:
+        daemon_reload: yes
+        name: padjs.service
+        enabled: yes
+        state: started
+
+    - name: install audio drivers | 1
+      copy:
+        src: files/install_audio.sh
+        dest: /usr/local/sbin/install_audio.sh
+        mode: 0755
+
+    - name: install audio drivers | 2
+      command: /usr/local/sbin/install_audio.sh -y

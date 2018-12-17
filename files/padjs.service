@@ -1,0 +1,13 @@
+[Unit]
+Description=pad.js service
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=0
+SuccessExitStatus=0
+Environment=PORT=80
+ExecStart=/usr/bin/node /usr/local/bin/pad.js --servedir=/memories --no-mime --timeout=-1
+
+[Install]
+WantedBy=multi-user.target
