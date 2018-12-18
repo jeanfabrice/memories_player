@@ -1,5 +1,5 @@
-Lecteur de souvenir
-===================
+Lecteur de souvenirs
+====================
 Un montage électronique pour lire de manière aléatoire des fichiers sonores pré-enregistrés au format mp3.
 Un cadeau idéal pour les grands-parents à Noël (avec les voix des petits enfants racontant leurs meilleurs souvenirs).
 
