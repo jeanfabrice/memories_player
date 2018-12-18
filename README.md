@@ -1,6 +1,6 @@
 Lecteur de souvenir
 ===================
-Un montage électronique pour lire de manière aléatoire des fichiers sonores pré-enregistré (format mp3).
+Un montage électronique pour lire de manière aléatoire des fichiers sonores pré-enregistrés au format mp3.
 Un cadeau idéal pour les grands-parents à Noël (avec les voix des petits enfants racontant leurs meilleurs souvenirs).
 
 Conçu autour :
@@ -8,11 +8,11 @@ Conçu autour :
 * d'un Raspberry Pi Zero W,
 * d'une [carte son pour Raspberry Pi Zero](http://amzn.eu/d/8MlHNYm),
 * d'un [potentiomètre numérique](http://amzn.eu/d/aPnkfWV) (rotary encoder) pour lancer la lecture et modifier le volume,
-* de divers [bouton, resistance et led](http://amzn.eu/d/18uhg3K) pour allumer/éteindre le lecteur et indiquer l'état.
+* de divers [boutons, résistances et leds](http://amzn.eu/d/18uhg3K) pour allumer/éteindre le lecteur et indiquer l'état d'activité.
 
 Configuration
 -------------
-Dans le fichier [memory_player.py](files/memories_player.py), certaines paramètres en début de fichier peuvent être modifiés :
+Dans le fichier [memory_player.py](files/memories_player.py), certains paramètres en début de fichier peuvent être modifiés :
 
 * ```GPIO_A``` et ```GPIO_B``` sont les broches du raspberry connectées aux entrées CLK et DT du potentiomètre numérique
 * ```GPIO_BUTTON``` est la broche du Raspberry connectée à l'entrée SW du potentiomètre numérique
@@ -24,11 +24,11 @@ Dans le fichier [memory_player.py](files/memories_player.py), certaines paramèt
 Installation initiale
 ---------------------
 Mettez à jour l'[inventaire Ansible](inventory) avec l'IP/le nom du raspberry sur le réseau, puis lancez :
-```ansible-playbook install.yml```
+```ansible-playbook -i inventory setup.yml```
 
 Utilisation
 -----------
-Allumez le raspberry avec le bouton.
+Allumez/éteignez le Raspberry avec le bouton.
 
 Téléchargez de nouveau souvenirs au format mp3 à l'aide du serveur web intégré.
 
